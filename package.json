@@ -1,0 +1,15 @@
+{
+  "name": "lib-scss",
+  "version": "1.0.0",
+  "main": "bin/index.js",
+  "bin": {
+    "lib-scss": "bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["scss", "library", "styles"],
+  "author": "DosSantosDev",
+  "license": "MIT",
+  "description": "Biblioteca de configurações para estilos em SCSS"
+}
