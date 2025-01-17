@@ -8,7 +8,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["scss", "library", "styles"],
+  "keywords": [
+    "scss",
+    "library",
+    "styles"
+  ],
   "author": "DosSantosDev",
   "license": "MIT",
   "description": "Biblioteca de configurações para estilos em SCSS"
