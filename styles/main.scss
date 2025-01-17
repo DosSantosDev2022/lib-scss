@@ -2,6 +2,9 @@
 
 // Mixins
 @use 'mixins/display';
+@use 'mixins/breakpoints';
+@use 'mixins/colors';
+@use 'mixins/text';
 
 // Variables
 @use 'variables/colors';
