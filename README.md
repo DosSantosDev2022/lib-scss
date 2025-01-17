@@ -45,20 +45,21 @@ Agora você tem acesso a todos os recursos fornecidos pela biblioteca.
 
 #### Variáveis
 
-No arquivo `_variables.scss`, você pode definir e usar variáveis globais como cores:
+Na pasta variables você encontrará diversas configurações de variáves scss já prontas para utilizar em
+seu projeto:
 
 ```scss
-// _variables.scss
-$primary-color: #3498db;
-$secondary-color: #2ecc71;
+// _colors.scss
+$primary: #fff
+$secondary: #0000
 ```
 
 #### Mixins
 
-Mixins reutilizáveis estão no arquivo `_mixins.scss`:
+Mixins reutilizáveis estão na pasta mixins
 
 ```scss
-// _mixins.scss
+// _display.scss
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -74,10 +75,10 @@ Mixins reutilizáveis estão no arquivo `_mixins.scss`:
 
 #### Funções
 
-Funções estão no arquivo `_functions.scss` para manipulação de valores:
+Funções estão na pasta functions e é usada para criarmos funções para manipulação de valores em scss.
 
 ```scss
-// _functions.scss
+// _calculate.scss
 @function rem($pixels) {
   @return $pixels / 16 * 1rem;
 }
