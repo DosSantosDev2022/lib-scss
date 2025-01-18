@@ -1,5 +1,4 @@
-
-// converte um valor de pixel para rem 
+// converte um valor de pixel para rem
 @function rem($pixels) {
-  @return $pixels / 16 * 1rem;
+  @return math.div($pixels, 16) * 1rem;
 }
