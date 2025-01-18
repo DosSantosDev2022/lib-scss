@@ -10,6 +10,11 @@
     "copy-styles": "xcopy src\\styles dist\\styles /E /I",
     "prepare": "npm run build"
   },
+  "files": [
+    "dist",
+    "styles",
+    "README.md"
+  ],
   "keywords": [
     "scss",
     "library",
