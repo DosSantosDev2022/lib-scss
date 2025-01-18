@@ -1,12 +1,14 @@
 {
   "name": "lib-scss",
   "version": "1.0.0",
-  "main": "bin/index.js",
+  "main": "dist/bin/index.js",
   "bin": {
-    "lib-scss": "bin/index.js"
+    "lib-scss": "dist/bin/index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && npm run copy-styles",
+    "copy-styles": "xcopy src\\styles dist\\styles /E /I",
+    "prepare": "npm run build"
   },
   "keywords": [
     "scss",
@@ -15,5 +17,9 @@
   ],
   "author": "DosSantosDev",
   "license": "MIT",
-  "description": "Biblioteca de configurações para estilos em SCSS"
+  "description": "Biblioteca de configurações para estilos em SCSS",
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "typescript": "^5.7.3"
+  }
 }
