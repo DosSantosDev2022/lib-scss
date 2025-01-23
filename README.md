@@ -10,25 +10,29 @@ Para instalar a biblioteca, você precisa apenas rodar o seguinte comando na rai
 npx lib-scss
 ```
 
-Esse comando criará automaticamente uma pasta chamada `styles` no diretório do seu projeto contendo todos os arquivos necessários.
+Esse comando criará automaticamente uma pasta chamada `sass` no diretório do seu projeto contendo todos os arquivos necessários.
 
-## Estrutura da Pasta `styles`
+## Estrutura da Pasta `sass`
 
-A pasta `styles` será criada com a seguinte estrutura:
+A pasta `sass` será criada com a seguinte estrutura:
 
 ```
-styles/
-|-- variables
-|-- mixins
-|-- functions
-|-- base.scss
+sass/
+|-- autoload
+|-- common
+|-- components
+|-- core
+|-- layout
+|-- pages
 |-- main.scss
 ```
 
-- **_variables.scss**: Contém variáveis globais, como cores, espaçamentos e tamanhos de fonte.
-- **_mixins.scss**: Inclui mixins reutilizáveis para media queries, animações e outros.
-- **_functions.scss**: Conjunto de funções úteis para manipulação de valores, como cores e tamanhos.
-- **_base.scss**: Define estilos globais básicos, como resets e estilizações padrão.
+- **autoload**: Contém arquivos de estilização externo, como fontes e bibliotecas css.
+- **common**: Inclui arquivos de estilização base e variáveis globais.
+- **components**: Contém arquivos de estilização dos componentes da aplicação.
+- **core**: Conjunto de funções e mixins úteis para manipulação de valores, como cores e tamanhos.
+- **layout**: Contém arquivos de estilização para layouts da aplicação, como header,footer e etc..
+- **pages**: Inclui os arquivos de estilização das páginas da aplicação
 - **main.scss**: Ponto de entrada principal que importa todos os arquivos acima.
 
 ## Uso
@@ -36,7 +40,7 @@ styles/
 Após a instalação, você pode importar o arquivo principal `main.scss` em seu projeto:
 
 ```scss
-@import './styles/main';
+@import './sass/main' as *;
 ```
 
 Agora você tem acesso a todos os recursos fornecidos pela biblioteca.
@@ -91,7 +95,7 @@ body {
 
 ## Personalização
 
-Você pode editar os arquivos na pasta `styles` para atender às necessidades do seu projeto. As configurações são pensadas para serem um ponto de partida e podem ser ajustadas facilmente.
+Você pode editar os arquivos na pasta `sass` para atender às necessidades do seu projeto. As configurações são pensadas para serem um ponto de partida e podem ser ajustadas facilmente.
 
 ## Contribuições
 

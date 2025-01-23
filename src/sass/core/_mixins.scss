@@ -1,0 +1,77 @@
+// Display Flex
+@mixin flex($justify: center, $align: center, $direction: row, $gap: 1px, $wrap: nowrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+
+// Display Flex Center
+// Um atalho para centralizar absolutamente qualquer coisa
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Display Grid
+@mixin grid($rows: none, $columns: none, $gap: 0, $justify: center, $align: center) {
+  display: grid;
+  grid-template-rows: $rows;
+  grid-template-columns: $columns;
+  gap: $gap;
+  justify-items: $justify;
+  align-items: $align;
+}
+
+// Centraliza itens dentro de um grid
+@mixin grid-center {
+  display: grid;
+  place-items: center;
+}
+
+/* --------------------------------- */
+
+// Mixins de breakpoints
+
+@mixin breakpoint($size) {
+  @if $size == small {
+    @media (max-width: 576px) {
+      @content;
+    }
+  } @else if $size == medium {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $size == large {
+    @media (max-width: 992px) {
+      @content;
+    }
+  } @else if $size == xlarge {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+/* ------------------------------------------ */
+
+//Mixins de textos
+
+@mixin text-ellipsis($lines: 1) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+/* -------------------------------------------- */
+
+// Mixins de cores
+
+@mixin gradient($direction: to bottom, $color1: #000, $color2: #fff) {
+  background: linear-gradient($direction, $color1, $color2);
+}
