@@ -7,7 +7,7 @@
   },
   "scripts": {
     "build": "tsc && npm run copy-styles",
-    "copy-styles": "xcopy src\\styles dist\\styles /E /I",
+    "copy-styles": "xcopy src\\sass dist\\sass /E /I",
     "prepare": "npm run build"
   },
   "files": [

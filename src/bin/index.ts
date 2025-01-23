@@ -4,11 +4,11 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 // Caminho correto para a pasta de origem dos arquivos SCSS
-const sourceDir: string = path.join(__dirname, '../styles');
+const sourceDir: string = path.join(__dirname, '../sass');
 
 // Caminho onde os arquivos serão copiados (no projeto de destino)
 const projectSrcDir: string = path.resolve(process.cwd(), './src');
-const targetDir: string = path.join(projectSrcDir, 'styles');
+const targetDir: string = path.join(projectSrcDir, 'sass');
 
 /**
  * Função para copiar arquivos e diretórios recursivamente.
