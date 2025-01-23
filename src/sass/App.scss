@@ -1,3 +1,6 @@
+@use './configs' as *;
+
+
 /* Reset básico para consistência entre navegadores */
 * {
   margin: 0;
@@ -15,12 +18,18 @@ html {
   /* Fonte padrão */
   scroll-behavior: smooth;
   /* Scroll suave */
+  /* scrollbar-custom */
+  @include custom-scrollbar()
 }
 
 body {
-  background-color: #f8f9fa;
+  @each $property, $value in $antialiased {
+    #{$property}: #{$value};
+  }
+
+  background-color: $background;
   /* Cor de fundo neutra */
-  color: #212529;
+  color: $foreground;
   /* Cor padrão de texto */
   min-height: 100vh;
   /* Garantir que o body ocupe a tela toda */
@@ -29,14 +38,62 @@ body {
 /* Links */
 a {
   text-decoration: none;
-  color: inherit;
+  color: $foreground;
   /* Usa a cor do texto */
   transition: color 0.3s ease;
+  font-size: $text-base;
+  line-height: $leading-tight;
 }
 
 a:hover {
-  color: #007bff;
+  color: $muted-foreground;
   /* Cor para hover */
+}
+
+/* Headings */
+h1 {
+  font-size: $text-6xl;
+  line-height: $leading;
+}
+
+h2 {
+  font-size: $text-5xl;
+  line-height: $leading;
+}
+
+h3 {
+  font-size: $text-4xl;
+  line-height: $leading-8;
+}
+
+h4 {
+  font-size: $text-3xl;
+  line-height: $leading-7;
+}
+
+h5 {
+  font-size: $text-2xl;
+  line-height: $leading-6;
+}
+
+h6 {
+  font-size: $text-xl;
+  line-height: $leading-5;
+}
+
+/* Texts */
+p {
+  font-size: $text-base;
+  color: $muted-foreground;
+  font-weight: $font-normal;
+  line-height: $leading-normal;
+}
+
+span {
+  font-size: $text-sm;
+  color: $muted-foreground;
+  font-weight: $font-light;
+  line-height: $leading-3;
 }
 
 /* Imagens */

@@ -1,5 +1,6 @@
+@use '../common/variables' as *;
 // Display Flex
-@mixin flex($justify: center, $align: center, $direction: row, $gap: 1px, $wrap: nowrap) {
+@mixin flex($justify, $align, $direction, $gap, $wrap: nowrap) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
@@ -74,4 +75,34 @@
 
 @mixin gradient($direction: to bottom, $color1: #000, $color2: #fff) {
   background: linear-gradient($direction, $color1, $color2);
+}
+
+
+/* scrollbar */
+@mixin custom-scrollbar(
+  $thumb-color: $primary, // Cor do "thumb" (parte arrastável)
+  $thumb-hover-color: $primary-hover, // Cor do "thumb" ao passar o mouse sobre ele
+  $track-color: $muted-foreground, // Cor da "track" (parte por onde o thumb se move)
+  $thumb-width: 8px, // Largura do "thumb"
+  $track-width: 8px // Largura da "track"
+) {
+  /* Estilos para a barra de rolagem */
+  ::-webkit-scrollbar {
+    width: $track-width;
+    height: $track-width;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $track-color;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $thumb-color;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: $thumb-hover-color;
+  }
 }

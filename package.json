@@ -1,12 +1,14 @@
 {
   "name": "lib-scss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/bin/index.js",
   "bin": {
     "lib-scss": "dist/bin/index.js"
   },
   "scripts": {
-    "build": "tsc && npm run copy-styles",
+    "build": "tsc && npm run compile-sass && npm run copy-styles",
+    "compile-sass": "sass src/sass:dist/css",
+    "watch-sass": "sass --watch src/sass:dist/css",
     "copy-styles": "xcopy src\\sass dist\\sass /E /I",
     "prepare": "npm run build"
   },
@@ -25,6 +27,7 @@
   "description": "Biblioteca de configurações para estilos em SCSS",
   "devDependencies": {
     "@types/node": "^22.10.7",
+    "sass": "^1.83.4",
     "typescript": "^5.7.3"
   }
 }
