@@ -18,29 +18,37 @@ A pasta `sass` será criada com a seguinte estrutura:
 
 ```
 sass/
-|-- autoload
-|-- common
 |-- components
-|-- core
-|-- layout
-|-- pages
-|-- main.scss
+  |-- layout
+  |-- pages
+  |-- ui
+|-- configs
+  |-- autoload
+  |-- common
+  |-- core
+|-- App.scss
 ```
 
-- **autoload**: Contém arquivos de estilização externo, como fontes e bibliotecas css.
-- **common**: Inclui arquivos de estilização base e variáveis globais.
-- **components**: Contém arquivos de estilização dos componentes da aplicação.
-- **core**: Conjunto de funções e mixins úteis para manipulação de valores, como cores e tamanhos.
-- **layout**: Contém arquivos de estilização para layouts da aplicação, como header,footer e etc..
-- **pages**: Inclui os arquivos de estilização das páginas da aplicação
-- **main.scss**: Ponto de entrada principal que importa todos os arquivos acima.
+- **autoload**: Contém arquivos de estilização externos, como fontes personalizadas ou bibliotecas CSS de terceiros.
+
+- **common**: Inclui arquivos de estilização base, como variáveis globais, tipografia, cores e outros estilos compartilhados.
+
+- **components**: Contém arquivos de estilização para componentes reutilizáveis da aplicação, como botões, cards, modais, etc.
+
+- **core**: Conjunto de funções e mixins úteis para manipulação de valores, como cores, tamanhos, cálculos, etc.
+
+- **layout**: Estilização dos layouts principais da aplicação, como cabeçalhos, rodapés e outras estruturas globais.
+
+- **pages**: Contém arquivos de estilização específicos para as páginas ou seções da aplicação.
+
+- **App.scss**: Arquivo principal que importa todos os arquivos SCSS e serve como ponto de entrada para compilar os estilos.
 
 ## Uso
 
-Após a instalação, você pode importar o arquivo principal `main.scss` em seu projeto:
+Após a instalação, você pode importar o arquivo principal `App.scss` em seu projeto:
 
 ```scss
-@import './sass/main' as *;
+@import './sass/App.scss';
 ```
 
 Agora você tem acesso a todos os recursos fornecidos pela biblioteca.
@@ -49,11 +57,11 @@ Agora você tem acesso a todos os recursos fornecidos pela biblioteca.
 
 #### Variáveis
 
-Na pasta variables você encontrará diversas configurações de variáves scss já prontas para utilizar em
+No arquivo variables você encontrará diversas configurações de variáves scss já prontas para utilizar em
 seu projeto:
 
 ```scss
-// _colors.scss
+// Váriaveis de cores seguindo um padrão específico.
 $primary: #fff
 $secondary: #0000
 ```
@@ -63,7 +71,7 @@ $secondary: #0000
 Mixins reutilizáveis estão na pasta mixins
 
 ```scss
-// _display.scss
+// mixin que centraliza qualquer elemento.
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -82,7 +90,7 @@ Mixins reutilizáveis estão na pasta mixins
 Funções estão na pasta functions e é usada para criarmos funções para manipulação de valores em scss.
 
 ```scss
-// _calculate.scss
+// função para calcular px em rem.
 @function rem($pixels) {
   @return $pixels / 16 * 1rem;
 }
